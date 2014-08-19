@@ -1,4 +1,7 @@
-/*
-!.gitignore
-!*.py
-!*.md
+WISE2014/Data
+*.txt
+*.png
+*.zip
+*.libsvm
+*.arff
+*.pkl
