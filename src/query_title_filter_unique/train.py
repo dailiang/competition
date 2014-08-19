@@ -5,7 +5,7 @@ import sys
 from scipy.sparse import *
 from sklearn import *
 
-train_file = r'train.txt'#_part.txt'
+train_file = r'train_part.txt'
 
 def loadfile(train_file, istrain):
 	ifile = open(train_file)
@@ -51,7 +51,7 @@ def modelfit(train_set, train_label, valid_set, model, pred_train=False, verbosi
 				if pred_train:
 					train_pred[:, category] = model.predict_proba(train_set)[:, 1]
 				if verbosity:
-					print j, '-th category done!'
+					print category, '-th category done!'
 	else:
 		for category in range(n_category):
 			if np.any(train_label[:, category] > 0):
@@ -60,7 +60,7 @@ def modelfit(train_set, train_label, valid_set, model, pred_train=False, verbosi
 				if pred_train:
 					train_pred[:, category] = model.predict(train_set)
 				if verbosity:
-					print j, '-th category done!'
+					print category, '-th category done!'
 	if pred_train:
 		return valid_pred, train_pred
 	return valid_pred
@@ -80,6 +80,6 @@ valid_label = train_label[m:, :]
 train_set = train_set[:m, :]
 train_label = train_label[:m, :]
 
-LR1_valid_pred, LR1_train_pred = modelfit(train_set, train_label, valid_set, linear_model.LogisticRegression(penalty='l1', C=0.2, tol=0.001), pred_train=True, verbosity=False)
+LR1_valid_pred, LR1_train_pred = modelfit(train_set, train_label, valid_set, linear_model.LogisticRegression(penalty='l1', C=2, tol=0.001), pred_train=True, verbosity=True)
 print 'test f1:', metrics.f1_score(np.argmax(valid_label, axis=1), np.argmax(LR1_valid_pred, axis=1))
 print 'train f1:', metrics.f1_score(np.argmax(train_label, axis=1), np.argmax(LR1_train_pred, axis=1))
