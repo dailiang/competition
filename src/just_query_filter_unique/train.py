@@ -5,7 +5,7 @@ import sys
 from scipy.sparse import *
 from sklearn import *
 
-train_file = r'train.txt'#_part.txt'
+train_file = r'train.txt'
 
 def loadfile(train_file, istrain):
 	ifile = open(train_file)

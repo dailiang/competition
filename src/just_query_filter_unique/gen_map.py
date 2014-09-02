@@ -1,10 +1,12 @@
+#-*- coding=utf-8 -*-
+
 import cPickle
 
-train_file = r'C:\Users\dailiang.dl\Desktop\CIKM\Data\train'#_part.txt'
+train_file = r'../../raw_data/train.txt'
 
-wc_query_file = r'C:\Users\dailiang.dl\Desktop\CIKM\Data\wc_query.txt'
+wc_query_file = r'../../raw_data/wc_query.txt'
 
-map_file = r'C:\Users\dailiang.dl\Desktop\CIKM\src\just_query_filter_unique\map'
+map_file = r'map.pkl'
 
 ## 将 query - count 导入字典
 wc_query_dict = dict()

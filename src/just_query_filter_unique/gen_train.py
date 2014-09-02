@@ -1,11 +1,12 @@
+#-*-coding=utf-8-*-
 import cPickle
 from string import strip
 
-train_file = r'C:\Users\dailiang.dl\Desktop\CIKM\Data\train'#_part.txt'
+train_file = r'../../raw_data/train.txt'
 
-map_file = r'C:\Users\dailiang.dl\Desktop\CIKM\src\just_query_filter_unique\map.pkl'
+map_file = r'map.pkl'
 
-save_file = r'C:\Users\dailiang.dl\Desktop\CIKM\src\just_query_filter_unique\train.txt'
+save_file = r'train.txt'
 
 CLASSES = [ 'VIDEO', 'NOVEL', 'GAME', 'TRAVEL', 'LOTTERY', 'ZIPCODE', 'OTHER' ]
 # map classes to numbers
